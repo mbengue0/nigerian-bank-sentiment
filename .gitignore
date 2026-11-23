@@ -1,0 +1,5 @@
+data/raw/
+data/interim/
+models/
+*.zip
+__pycache__/

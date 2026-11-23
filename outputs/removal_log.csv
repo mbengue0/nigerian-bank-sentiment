@@ -1,0 +1,6 @@
+step,removed
+empty text after normalization,96
+rating 3 (excluded from binary task),22215
+invalid rating,0
+exact duplicate rows collapsed (same normalized text),114428
+conflicting-label groups removed (groups),1359

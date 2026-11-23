@@ -1,0 +1,54 @@
+== Source files ==
+access_reviews.csv            50,204  MATCH                  utf-8    sha256[:16]=676cd26b49b2a126
+ecoBank_reviews.csv           17,442  MATCH                  utf-8    sha256[:16]=1a783b8ae8dfdf5e
+fbn_reviews.csv               33,607  MATCH                  utf-8    sha256[:16]=58954561b0812518
+fcmb_reviews.csv              12,006  MATCH                  utf-8    sha256[:16]=c257ae664fe8224c
+fidelityBank_reviews.csv       3,703  MATCH                  utf-8    sha256[:16]=26d070d9b36d726b
+gtb_reviews.csv               14,147  MATCH                  utf-8    sha256[:16]=f1cb9998b883d8cd
+jaizBank_reviews.csv           1,197  MATCH                  utf-8    sha256[:16]=c0ccb58b80b8183a
+keyStoneBank_reviews.csv       3,978  MATCH                  utf-8    sha256[:16]=756fd817d7f49ec7
+polarisBank_reviews.csv        6,100  MATCH                  utf-8    sha256[:16]=57c01d2c01d765ab
+stanbicIbtc_reviews.csv       45,094  MATCH                  utf-8    sha256[:16]=f63120a64a14f242
+sterlingBank_reviews.csv       7,974  MATCH                  utf-8    sha256[:16]=428e92d1466faf88
+uba_reviews.csv               87,609  MATCH                  utf-8    sha256[:16]=c5328b528542e8a9
+unionBank_reviews.csv          9,293  MATCH                  utf-8    sha256[:16]=bd5fdb131666f2df
+unityBank_reviews.csv            927  MATCH                  utf-8    sha256[:16]=6c97c45fce38eb8d
+wemaBank_reviews.csv          20,175  MATCH                  utf-8    sha256[:16]=b45c4803d0a3ba18
+zenithBank_reviews.csv        20,959  MATCH                  utf-8    sha256[:16]=dda1b15cddf5d449
+
+== Field checks ==
+rows with score outside 1-5 or non-numeric: 0
+rows with non-numeric year: 0
+year range: 2012-2024
+rows per year: 2012=21, 2013=244, 2014=1,764, 2015=3,186, 2016=7,707, 2017=11,194, 2018=14,072, 2019=31,181, 2020=52,440, 2021=68,860, 2022=67,261, 2023=75,740, 2024=745
+raw rating counts: 1*=86,044, 2*=16,999, 3*=22,222, 4*=37,428, 5*=171,722
+reviews whose whole text is NA/None/null-like (kept as text): 38
+
+== Audit (same sequence as 17 November) ==
+raw_rows                                     334,415  MATCH
+empty_text_rows_all_ratings                       96  MATCH
+nonempty_binary_rows                         312,104  MATCH
+unique_texts_before_conflicts                197,676  MATCH
+conflicting_groups                             1,359  MATCH
+candidates_after_conflicts                   196,317  MATCH
+negative_candidates                           93,596  MATCH
+positive_candidates                          102,721  MATCH
+candidates_3plus_tokens (exploratory)        184,897  MATCH
+  of which negative / positive: 91,682 / 93,215   (earlier: 91,682 / 93,215; NOT adopted)
+
+== Candidate pool description (not a satisfaction rate) ==
+texts that appear under more than one bank: 5,125
+texts that occurred more than once in the raw data: 6,077
+raw rows inside conflicting groups: 95,109
+token length (whitespace) quantiles: p10=3, p25=6, p50=11, p75=24, p90=42, p99=89
+most common texts among candidates:
+     135 x  label=1  'Great App.'
+     124 x  label=1  'sweet'
+     113 x  label=0  'Terrible'
+     112 x  label=1  'very efficient'
+      99 x  label=1  'Awesome!'
+      87 x  label=1  'excellent 👌'
+      79 x  label=1  'The Best App'
+      79 x  label=1  'Seamless'
+      78 x  label=1  'Great app!'
+      72 x  label=1  'love the app'
