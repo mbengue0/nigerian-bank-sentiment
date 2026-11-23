@@ -17,3 +17,12 @@ Earlier sessions (per the handoff and slide 9): ChatGPT assisted with project sc
 ## 23 November 2026 — Claude, session 2
 - Claude ran two more full GRU seeds (1, 2); validation macro-F1 0.9046 / 0.9061 / 0.9089 for seeds 42 / 1 / 2.
 - Claude drafted the progress report (Claude Docs) from the recorded outputs. Test split still unused.
+
+## 23 November 2026 — Claude, session 3
+- Claude added the unseen-bank extension (decided by the student): Zenith Bank held out, splits rebuilt
+  from 15 banks, both models retrained. Earlier results archived in outputs/preliminary_16banks/.
+- Claude wrote and ran 06_evaluate.py (single final evaluation on test + Zenith) and
+  07_error_analysis.py (rule-based error types, McNemar test).
+- Claude read 150 random test errors and assigned each a category (outputs/manual_error_labels.csv);
+  this first pass has not yet been checked by the student.
+- Claude produced the progress report PDF (reports/).

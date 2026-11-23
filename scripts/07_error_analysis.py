@@ -14,15 +14,16 @@ import re
 from pathlib import Path
 
 import pandas as pd
+from scipy.stats import chi2
 
 from gru_model import tokenize
 
 SEED = 42
-NEGATION = re.compile(r"\b(not|no|never|nothing|none|nobody|cannot|can't|cant|don't|dont|doesn't|doesnt|"
+NEGATION = re.compile(r"\b(?:not|no|never|nothing|none|nobody|cannot|can't|cant|don't|dont|doesn't|doesnt|"
                       r"didn't|didnt|isn't|isnt|won't|wont|wasn't|wasnt|n't)\b")
-CONTRAST = re.compile(r"\b(but|however|although|though|except|yet)\b")
+CONTRAST = re.compile(r"\b(?:but|however|although|though|except|yet)\b")
 # Common Nigerian Pidgin / Nigerian English markers (short, hand-written list).
-PIDGIN = re.compile(r"\b(dey|abeg|wetin|una|wahala|oga|sef|comot|abi|na wa|e no|no dey|dem|shey|sha|o|ooo|jare|mtchew)\b")
+PIDGIN = re.compile(r"\b(?:dey|abeg|wetin|una|wahala|oga|sef|comot|abi|na wa|e no|no dey|dem|shey|sha|o|ooo|jare|mtchew)\b")
 
 def tag(df):
     text = df["content"].str.lower()
@@ -57,6 +58,12 @@ for set_name in ["test", "unseen_zenithBank"]:
     lines += ["",
               f"- Both wrong: {both:,}; only LR wrong: {only_lr:,}; only GRU wrong: {only_gru:,}; "
               f"models disagree on {int(df['models_disagree'].sum()):,} reviews.",
+              # McNemar's test (with continuity correction): are "only LR wrong" and "only GRU wrong"
+              # more different than chance would give? Only the reviews where the models disagree count.
+              f"- McNemar test, LR vs GRU (seed {SEED}): chi-square = "
+              f"{(abs(only_lr - only_gru) - 1) ** 2 / (only_lr + only_gru):.2f}, "
+              f"p = {chi2.sf((abs(only_lr - only_gru) - 1) ** 2 / (only_lr + only_gru), 1):.3f} "
+              f"(p above 0.05: no evidence that one model makes fewer errors).",
               f"- Errors by true label: LR misses {int((lr_wrong & (df.label == 0)).sum()):,} negatives and "
               f"{int((lr_wrong & (df.label == 1)).sum()):,} positives; GRU misses "
               f"{int((gru_wrong & (df.label == 0)).sum()):,} negatives and {int((gru_wrong & (df.label == 1)).sum()):,} positives.\n"]
@@ -77,10 +84,23 @@ for set_name in ["test", "unseen_zenithBank"]:
         sample = errors.sample(150, random_state=SEED)
         sample["wrong_model"] = ["both" if a and b else ("LR only" if a else "GRU only")
                                  for a, b in zip(lr_wrong[sample.index], gru_wrong[sample.index])]
-        sample["manual_category"] = ""   # filled by reading each review
+        # Manual categories are kept in their own file so re-running this script never erases them.
+        manual_path = Path("outputs/manual_error_labels.csv")
+        manual = pd.read_csv(manual_path, keep_default_na=False) if manual_path.exists() else None
+        sample["manual_category"] = (sample["text_hash"].map(dict(zip(manual.text_hash, manual.manual_category)))
+                                     .fillna("") if manual is not None else "")
         cols = ["text_hash", "content", "label", "scores", "lr_prob", f"gru{SEED}_prob", "wrong_model",
                 *tags.columns, "manual_category"]
         sample[cols].to_csv("outputs/error_sample_for_reading.csv", index=False)
+        if manual is not None:
+            lines += ["## Manual reading of 150 random test errors\n",
+                      "Each review was read and put in ONE main category (labels in outputs/manual_error_labels.csv, "
+                      "first pass by Claude, AI assistant).\n",
+                      "| Category | Both wrong | LR only | GRU only | Total | Share |", "|---|---:|---:|---:|---:|---:|"]
+            for cat, grp in sample.groupby("manual_category"):
+                lines.append(f"| {cat} | {(grp.wrong_model == 'both').sum()} | {(grp.wrong_model == 'LR only').sum()} | "
+                             f"{(grp.wrong_model == 'GRU only').sum()} | {len(grp)} | {len(grp) / len(sample):.0%} |")
+            lines.append("")
 
 Path("outputs/error_analysis.md").write_text("\n".join(lines) + "\n")
 print("\n".join(lines))

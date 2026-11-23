@@ -1,0 +1,151 @@
+text_hash,manual_category
+43f07d6312a9fc46dfaa79ddf371cb10ecbcbac3,"no clear sentiment (question, request, name, noise)"
+c8d18b3ee96ce53108cb0a94ec3366f14a8d33fc,genuine model error
+ff0f627566c9ad4706fb845170fc48a5344e1e4a,genuine model error
+1140990119815a22849096e0e806eff58273f6f1,genuine model error
+d083006e752e7580756cfe45b738ceeab1d663f4,"no clear sentiment (question, request, name, noise)"
+613fae9235dab50ffb4914bcac4e9cc9490ba363,text contradicts rating (label noise)
+db35afc7a39b5c2dd4a58b756a8bc019e5f3b549,text contradicts rating (label noise)
+c66de6e38edfbddc3003101b82a3604a69469029,mixed opinion (praise and complaint)
+447f5dded0aa16cbd2147c9ded9ceb284cd11788,genuine model error
+4c929acb3a83b0958f4b5c934362bea92fec346f,text contradicts rating (label noise)
+2cabf9f3b259c8441479f22b913e6b6809f5bb92,genuine model error
+e01616319b153a883b9cd3acb42847a8cea64575,"no clear sentiment (question, request, name, noise)"
+f2f851e47dc535eb50493cdcdbab982de7a9eaac,genuine model error
+990b5ebaa6cc70dbcfdea71c83c86fe6721fb9a8,text contradicts rating (label noise)
+318354abaca3da718311a5348f3ade7d66372e04,genuine model error
+20c618f1bde3bc226260c5fc2954bb6c402597aa,genuine model error
+37ea18f4dd60ea4e0e710af9828814e8a9cb0a12,genuine model error
+e7d96fdb6d92243a099e4b9883590b7e1c5cc53b,mixed opinion (praise and complaint)
+b4c65b30bfaf9c17abf848013ee3164f86b845c0,text contradicts rating (label noise)
+8cbc41d845c5687c6dffe63fc95e83ec630ca302,genuine model error
+d22efea9d300fa960a43cd0d49d1af565cdb210e,"no clear sentiment (question, request, name, noise)"
+360c5944d6b06898f57d1ce4419773ad8add6bf0,genuine model error
+9c2f9e3190b0e44a4a21e2278c9bc7a193e8d4e8,mixed opinion (praise and complaint)
+273689b5d528aaa19b79c0e86e77bea156c05318,genuine model error
+96d2c170d8f3a50c9a9caccbb1e92db57496e54f,"no clear sentiment (question, request, name, noise)"
+3e2d5412a2a642e0d991398d8d21bcdb8d95632a,text contradicts rating (label noise)
+4d8ef2e033ded0037d271cc0ffec3d44150ccaec,"no clear sentiment (question, request, name, noise)"
+b919b8ea7f632f72541f9a2836c0184d73be92dc,text contradicts rating (label noise)
+204094731654b6260a72bbb69c1328bdf2b04bdc,genuine model error
+48d26b30f83a877f28bfec1c25cc9d33604af15e,text contradicts rating (label noise)
+6042efe0cbca0f2c9b3785ada6173bc866f25e2f,text contradicts rating (label noise)
+0b797ec963c742778a56150e74bbb87a4520004a,text contradicts rating (label noise)
+8dc3cc9b853c30b6df5e2b9cbef26846782bdaa8,mixed opinion (praise and complaint)
+45e48703fd8d520f59e1218575eabc14d2156362,genuine model error
+c68a6d1a85ef8885fc6b2730caae62f3c2b69420,"no clear sentiment (question, request, name, noise)"
+04793800f8861369625ac07fa1e76e755bf8a471,mixed opinion (praise and complaint)
+af313fa72e8b6ec22f342dcbfe0643052e5f10f6,text contradicts rating (label noise)
+654c9adbc33164fc6d320467b2d2c1d8526808ce,mixed opinion (praise and complaint)
+3be2735929d425eea9bfde07f4ac8bdd3a3d6925,text contradicts rating (label noise)
+5b1c479665c50390521b445b07cb6ee599b27767,text contradicts rating (label noise)
+c5a2298e4d602d966e916fea215c827da0515691,text contradicts rating (label noise)
+b2f8624686f00583d348f696ec276c6379b23be7,text contradicts rating (label noise)
+cd53e43ac95957df043c91947bd7475677615b97,text contradicts rating (label noise)
+ee1d29d2be85d7bfe306851bec2d7bdb30dbf441,text contradicts rating (label noise)
+f0a6aa98650fbc2fbed767f4ee0b107dd45f75e7,"no clear sentiment (question, request, name, noise)"
+0a1aa6e30b9f6406520bd273a08acf55c3b45c5f,text contradicts rating (label noise)
+734ddb05abbd1c41b17b7e4e5884987c8b2fd3bd,text contradicts rating (label noise)
+cf0deca361f208396eee7d600a2b410e5bc62c15,genuine model error
+0e9b832d12eb798cb2ac6937b9326e7b7b8b84ff,"no clear sentiment (question, request, name, noise)"
+7ba7ffd24e59fab8181d6256a34eb11ce0c6a9c1,genuine model error
+19720badd347aac8152bd8a1a723eeae2767fee9,mixed opinion (praise and complaint)
+b7bc32de9bf9f8997699a767834c310a3356fea0,genuine model error
+34fe5c250f8681362dee0a1876a836d57aeceaee,text contradicts rating (label noise)
+1de5cdffd3185a1bb5098a5ee9139f363ed5034e,text contradicts rating (label noise)
+292f5db77e5b862f4b56b2a929a480ef0ab05e66,text contradicts rating (label noise)
+1690b2eca45c11bc9ccc79129ec0d29bcf66f4f0,genuine model error
+e1a98a8eeb2f3f6d719acd6b85a1bf3ada4b2443,mixed opinion (praise and complaint)
+678a7bc17126c3777451c1072f4345364b83bf95,text contradicts rating (label noise)
+0b061a092ec83ffec44f2acaf9635a275a5cece9,genuine model error
+aa0887084a688c2a4090909f6b51761398f25c36,text contradicts rating (label noise)
+9f0333fdaa8c89f516dfe9be37dfdd6f87a86932,text contradicts rating (label noise)
+0b693b15684236a3d4b9e08f87ca0dd03ed173ca,genuine model error
+a4fcec5c20c3633ca0b08cfce398a6ba8f44d5da,text contradicts rating (label noise)
+6d600a6514559235a7f11df785a9bdd96585ca8e,text contradicts rating (label noise)
+5442a204b6ceea19048a4afd49fee9f8a71c19f6,genuine model error
+f60ec06ddd986d125c9280d346446c98ada94aa1,text contradicts rating (label noise)
+9f6a7e81a9e3ef9555e7a1c319133d0df6005c14,mixed opinion (praise and complaint)
+d49fceb9343e534a9cab6eac1231a5d2ec463b41,genuine model error
+9945edeaa3f59d53f471ce0a277a79c27a84a2b3,genuine model error
+5cef9c9f6b394fb5356a50c4fa90231819f07ea5,"no clear sentiment (question, request, name, noise)"
+7b62fad3413e4b18c26bcf80c8638a60a87f0ce9,text contradicts rating (label noise)
+1ddcdf6bc75f26c17241cf1ab4629e106ed666bc,genuine model error
+1608b0c34a633071d9f6d3b2eb90672e0d9a4fa7,"no clear sentiment (question, request, name, noise)"
+780239fdaacfec9ef315ea407698f8742d896164,"no clear sentiment (question, request, name, noise)"
+68672cbfa28efeb3a6b89caeb1541e19b8ec8a09,text contradicts rating (label noise)
+50a19f635d3c0264278199b2c1238a0fe31f76fb,mixed opinion (praise and complaint)
+7b7aad79c0cb676ab5a8820811944d35fc0516fb,genuine model error
+50d3acc5a14884df57191da17d1161e90bbaf238,text contradicts rating (label noise)
+6da326a52754cc053de08f7a22e86bb6ce9356a1,"no clear sentiment (question, request, name, noise)"
+15bc3e1ded64947d305cc721ec78fc87e31ff8b5,text contradicts rating (label noise)
+d552f27eb2f2812373d85688a890068a24b58b17,genuine model error
+693fb490b072d282132dd2f1adef5a2bb0888518,text contradicts rating (label noise)
+748c376a5a7d426d689c318ca39dfe4c850aa8c7,text contradicts rating (label noise)
+1007f25f58ecdab30316f62311047441f5315736,"no clear sentiment (question, request, name, noise)"
+3929636c93929ccd42152706625807670fb4d1f7,text contradicts rating (label noise)
+bea1db13de1e7b28bddd56825ce0301f72b9f9e1,mixed opinion (praise and complaint)
+4cd1a73064d77a04772d1c341f5b1c466aaefa02,mixed opinion (praise and complaint)
+788f0886b1c3560db833fb6af65b31d15d937367,genuine model error
+d585f7b954adc0e8c090664a193092aa01012023,text contradicts rating (label noise)
+749ef84d61069d9e295c44a8935f2836c4eab6db,mixed opinion (praise and complaint)
+1d617351bca99594e991123c6ddae91d2c8aaa5d,genuine model error
+cd4ea284188ebe8d72d204df5cfa3f18739fc33b,"no clear sentiment (question, request, name, noise)"
+463c47dc21a2ac98dede9a060e19e4b820cdb866,text contradicts rating (label noise)
+625456bd075925ea62bb281f8aad9bedbf278e76,mixed opinion (praise and complaint)
+21924d2eeb7cd1fbfffc6309629bc50a3f1a9c75,text contradicts rating (label noise)
+8971e97e97755508056b3c3e4a22bf0bf84c1600,text contradicts rating (label noise)
+9fa10f992bf2d543c55ba692a0a6dffa107444e1,genuine model error
+d27f487a2604c6f2e2272696ae634159ee466b4b,text contradicts rating (label noise)
+a297b7e5c64bdefdd873e2dbe623bd83c8c3c0dc,text contradicts rating (label noise)
+eee39e40029745af4ba741373210f6ae769cb8fe,genuine model error
+141e2f67323e568381eae9eb9503573d387ee54d,text contradicts rating (label noise)
+872b903c2ce4253b9ecffa686ce7167ce31fc321,text contradicts rating (label noise)
+90465a56a136dd87f4ca0e3a83256eb967f9e239,text contradicts rating (label noise)
+bc31fb98235e0b03e99b8a389041f0f16bb17c82,text contradicts rating (label noise)
+cae88bd8715da1e065566256cc79b370a1af782d,text contradicts rating (label noise)
+094f775a396eea2ee9d5ce87579f799796051cfb,text contradicts rating (label noise)
+5ca345c9db14ce39ee0a48e807cd1dbdb29a3a23,text contradicts rating (label noise)
+9b7d0e9d32b2d3e20472f596b2b7cef644ead0ba,genuine model error
+c0c3cf8ffa9674c7ade63f506ed2780225a52d15,text contradicts rating (label noise)
+2f459bcf10a033877758c455613e9a9f19d2e697,genuine model error
+b391a42fc4812777868612f0ca21ecd50e8e5330,genuine model error
+d476e02d00fb020c337c763a8a9320689d28df4a,genuine model error
+acc771c12a518b4deadbe67cc9f7f977e7cbec73,text contradicts rating (label noise)
+992f4cd756a842d393a7c155d9c204d930464475,"no clear sentiment (question, request, name, noise)"
+46383d3d7f877184c68d7fada6e63f0ec1b13610,"no clear sentiment (question, request, name, noise)"
+0a48b4c43abf0d883919c000ae25cb2d08b25b5a,genuine model error
+feaec06a6ca493d718bd371c70812bb002a0ce3d,genuine model error
+ee644a79e736371993e809ee23d662ac7a9626ec,"no clear sentiment (question, request, name, noise)"
+a9dc6047a46dfa9ad9a5a00ef38ceb69a480f2ac,genuine model error
+2f058443d50f7b882ac5fe85dc56dc84fc0ee856,"no clear sentiment (question, request, name, noise)"
+60a6992f24c7c8ee67d5d74fe44e0ee06d61a333,text contradicts rating (label noise)
+2979beaf4b52808f950f9547a2fc5ff09bd873aa,genuine model error
+1a657b387f6f3ae96a54bd7fc16f3f73ee9631fc,text contradicts rating (label noise)
+5345f71fd9b3e2e895ff4f8d6918060826646bea,text contradicts rating (label noise)
+e837844c2cdad8b6bd768f35fb016885dbce2485,genuine model error
+8227977c73195b84be00568871aaa63cb3c4f946,text contradicts rating (label noise)
+e9a0d6e7ab3d26e796a2ef577b48f51c4b8582f6,"no clear sentiment (question, request, name, noise)"
+296cba382eb138fe41860c57e88cd94299828619,mixed opinion (praise and complaint)
+6aeadd675dc3dc7de72ea19a8c01e7b1b1d63af0,text contradicts rating (label noise)
+e344573f719e9514879bfc67b1b8356b3e73c9c3,genuine model error
+4059dcb01360abad47b3723669978e844a5413dc,genuine model error
+6bda88cd0055497508c3b5013f9fcf4b0ca8f6ed,genuine model error
+bf91175d1f7f7020e9e006d6a5a6bc2cbc915dbc,genuine model error
+27086418b56ead40963dfdea7a67e5d230c0ee29,mixed opinion (praise and complaint)
+bed2fe03af1332072caf785edaebf016ec2e9943,"no clear sentiment (question, request, name, noise)"
+3bda3af3ac7fcbd05220ec9d498889f3838ef7bf,genuine model error
+76a8ab4392e01159b1ae80b342d41eb58583720f,genuine model error
+4f8243ff28504c1743eb2cbe3896779710fe0fbb,"no clear sentiment (question, request, name, noise)"
+bf619577db052dc4f89d6e4e34c0c82c1ce25f0f,text contradicts rating (label noise)
+ce040e6af9b385e77e6ccfa9285014c59489dce9,"no clear sentiment (question, request, name, noise)"
+2c7c58c92a013fcc08173a17db34e41e2bf2b923,text contradicts rating (label noise)
+60b4d9f4f6673d0e51e2c9c3a3a333f21f1c755a,text contradicts rating (label noise)
+83f2f8eff9c754869c52df38826ee6245b118d09,text contradicts rating (label noise)
+1ef3477b9ece2b24ca3bd53f27a3adf995e7368a,genuine model error
+b995c9a2da41541825ca23dd24bee5124615f574,"no clear sentiment (question, request, name, noise)"
+90f20c0c7a5caf7a26d6ee5a411dd2a5fa1364ed,text contradicts rating (label noise)
+6e9eb8de721ab1c52184a6793c1aabd74b0ac9ea,genuine model error
+f0f5c73274c7627c67009cd6d6680b812274678b,mixed opinion (praise and complaint)
+e2740e46630ec44e223e031f1787ed837abfa99a,mixed opinion (praise and complaint)
+132ed2498610d5b914399e91745dac70bc72227e,text contradicts rating (label noise)
