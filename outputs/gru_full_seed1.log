@@ -1,0 +1,11 @@
+{'epoch': 1, 'train_loss': 0.3277, 'val_macro_f1': 0.8959, 'epoch_seconds': 58.2}
+{'epoch': 2, 'train_loss': 0.2498, 'val_macro_f1': 0.9033, 'epoch_seconds': 56.5}
+{'epoch': 3, 'train_loss': 0.2271, 'val_macro_f1': 0.9052, 'epoch_seconds': 54.3}
+{'epoch': 4, 'train_loss': 0.2061, 'val_macro_f1': 0.9061, 'epoch_seconds': 56.0}
+{'epoch': 5, 'train_loss': 0.1865, 'val_macro_f1': 0.9011, 'epoch_seconds': 59.4}
+{'epoch': 6, 'train_loss': 0.1669, 'val_macro_f1': 0.9005, 'epoch_seconds': 57.0}
+early stopping
+
+gru_full_seed1: val macro-F1 0.9061 acc 0.9061  params 1,151,449
+train 346.8s  val inference 1.02s  peak memory 952 MB
+confusion (rows true neg/pos, cols pred neg/pos): [[4587, 355], [584, 4474]]
