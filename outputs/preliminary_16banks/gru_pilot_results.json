@@ -1,0 +1,84 @@
+{
+  "run": "pilot (1 epoch, 20k-train subset; feasibility only, not a final result)",
+  "config": {
+    "seed": 42,
+    "max_vocab": 30000,
+    "min_freq": 2,
+    "max_len": 100,
+    "embed_dim": 100,
+    "hidden_dim": 128,
+    "dropout": 0.3,
+    "batch_size": 64,
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "loss": "BCEWithLogitsLoss",
+    "max_epochs": 1,
+    "patience": 2,
+    "grad_clip": 1.0,
+    "pilot_train_size": 20000,
+    "torch_threads": 2
+  },
+  "vocab_size_incl_pad_unk": 5357,
+  "trainable_parameters": 624149,
+  "train_reviews": 20000,
+  "share_train_reviews_truncated": 0.0095,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.4387,
+      "val_macro_f1": 0.8673,
+      "epoch_seconds": 17.0
+    }
+  ],
+  "best_epoch": 1,
+  "train_seconds_total": 18.0,
+  "val_inference_seconds_10k_reviews": 1.05,
+  "process_peak_memory_mb": 859,
+  "environment": {
+    "python": "3.13.18",
+    "torch": "2.15.0+cu132",
+    "device": "CPU",
+    "threads": 2
+  },
+  "validation": {
+    "macro_f1": 0.8673,
+    "accuracy": 0.8673,
+    "per_class": {
+      "negative": {
+        "precision": 0.8511754420050515,
+        "recall": 0.886483205180089,
+        "f1-score": 0.8684706115571414,
+        "support": 4942.0
+      },
+      "positive": {
+        "precision": 0.884401401195137,
+        "recall": 0.8485567417951759,
+        "f1-score": 0.8661083644435476,
+        "support": 5058.0
+      },
+      "accuracy": 0.8673,
+      "macro avg": {
+        "precision": 0.8677884216000942,
+        "recall": 0.8675199734876324,
+        "f1-score": 0.8672894880003446,
+        "support": 10000.0
+      },
+      "weighted avg": {
+        "precision": 0.8679811321633966,
+        "recall": 0.8673,
+        "f1-score": 0.8672757869670857,
+        "support": 10000.0
+      }
+    },
+    "confusion_matrix_rows_true_cols_pred": [
+      [
+        4381,
+        561
+      ],
+      [
+        766,
+        4292
+      ]
+    ]
+  }
+}

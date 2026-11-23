@@ -1,0 +1,206 @@
+{
+  "environment": {
+    "python": "3.13.18",
+    "sklearn": "1.9.1",
+    "cpu": "x86_64",
+    "logical_cpus": 2,
+    "timing": "time.perf_counter wall-clock; inference time includes TF-IDF transform of raw text"
+  },
+  "majority_class": {
+    "predicts": 1,
+    "validation": {
+      "macro_f1": 0.3359,
+      "accuracy": 0.5058,
+      "per_class": {
+        "negative": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 4942.0
+        },
+        "positive": {
+          "precision": 0.5058,
+          "recall": 1.0,
+          "f1-score": 0.6718023641917917,
+          "support": 5058.0
+        },
+        "accuracy": 0.5058,
+        "macro avg": {
+          "precision": 0.2529,
+          "recall": 0.5,
+          "f1-score": 0.33590118209589587,
+          "support": 10000.0
+        },
+        "weighted avg": {
+          "precision": 0.25583364000000003,
+          "recall": 0.5058,
+          "f1-score": 0.33979763580820826,
+          "support": 10000.0
+        }
+      },
+      "confusion_matrix_rows_true_cols_pred": [
+        [
+          0,
+          4942
+        ],
+        [
+          0,
+          5058
+        ]
+      ]
+    }
+  },
+  "tfidf_lr_grid": [
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 0.25,
+      "val_macro_f1": 0.894,
+      "fit_seconds": 1.08,
+      "n_features": 9836
+    },
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 1.0,
+      "val_macro_f1": 0.8981,
+      "fit_seconds": 1.2,
+      "n_features": 9836
+    },
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 4.0,
+      "val_macro_f1": 0.8987,
+      "fit_seconds": 1.48,
+      "n_features": 9836
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 0.25,
+      "val_macro_f1": 0.8951,
+      "fit_seconds": 2.43,
+      "n_features": 93199
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 1.0,
+      "val_macro_f1": 0.9026,
+      "fit_seconds": 2.63,
+      "n_features": 93199
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 4.0,
+      "val_macro_f1": 0.9034,
+      "fit_seconds": 2.79,
+      "n_features": 93199
+    }
+  ],
+  "tfidf_lr_selected": {
+    "settings": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 4.0,
+      "min_df": 2,
+      "sublinear_tf": true,
+      "solver": "liblinear (single thread)"
+    },
+    "n_features": 93199,
+    "train_seconds": 2.72,
+    "val_inference_seconds_10k_reviews": 0.196,
+    "process_peak_memory_mb (whole script)": 362,
+    "validation": {
+      "macro_f1": 0.9034,
+      "accuracy": 0.9034,
+      "per_class": {
+        "negative": {
+          "precision": 0.8888888888888888,
+          "recall": 0.9194658033184946,
+          "f1-score": 0.9039188382733241,
+          "support": 4942.0
+        },
+        "positive": {
+          "precision": 0.9185761047463176,
+          "recall": 0.8877026492684855,
+          "f1-score": 0.9028755278503922,
+          "support": 5058.0
+        },
+        "accuracy": 0.9034,
+        "macro avg": {
+          "precision": 0.9037324968176033,
+          "recall": 0.9035842262934901,
+          "f1-score": 0.9033971830618581,
+          "support": 10000.0
+        },
+        "weighted avg": {
+          "precision": 0.9039046826695764,
+          "recall": 0.9034,
+          "f1-score": 0.9033911318614051,
+          "support": 10000.0
+        }
+      },
+      "confusion_matrix_rows_true_cols_pred": [
+        [
+          4544,
+          398
+        ],
+        [
+          568,
+          4490
+        ]
+      ]
+    },
+    "top_positive_features": [
+      "great",
+      "awesome",
+      "love",
+      "best",
+      "easy",
+      "excellent",
+      "amazing",
+      "not bad",
+      "kudos",
+      "wonderful",
+      "good",
+      "perfect",
+      "nice",
+      "exceptional",
+      "keep it"
+    ],
+    "top_negative_features": [
+      "worst",
+      "useless",
+      "poor",
+      "worse",
+      "not",
+      "terrible",
+      "horrible",
+      "annoying",
+      "frustrating",
+      "rubbish",
+      "can",
+      "stupid",
+      "unreliable",
+      "doesn",
+      "sucks"
+    ]
+  }
+}

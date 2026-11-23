@@ -2,31 +2,33 @@ candidates in: 196,317
 after English filter: 193,793  (dropped 509 no-word, 2,015 low-share)
 after near-duplicate removal: 186,902
   negative / positive: 92,380 / 94,522
-no exact or near-duplicate overlap between partitions: OK
+
+held-out bank zenithBank: 12,041 reviews (7,069 neg / 4,972 pos); 1,112 shared texts dropped
+pool for the main experiment (other 15 banks): 173,749
+no exact or near-duplicate overlap between any two sets, and no zenithBank text in train/val/test: OK
 
 seed=42  target=100,000  min English share=0.5
 split      rows     neg     pos  pos %
-train    80,000  39,543  40,457   50.6
-val      10,000   4,942   5,058   50.6
-test     10,000   4,941   5,059   50.6
+train    80,000  39,208  40,792   51.0
+val      10,000   4,902   5,098   51.0
+test     10,000   4,900   5,100   51.0
 
 rows per bank group in the 100k sample (neg / pos):
-  access          5,034 /  7,649
-  ecoBank         4,136 /  2,054
-  fbn             5,852 /  4,340
-  fcmb            2,551 /  1,514
-  fidelityBank      525 /    604
-  gtb             2,314 /  2,013
-  jaizBank          150 /    225
-  keyStoneBank      707 /    663
-  multi             255 /  1,747
-  polarisBank     1,597 /    742
-  stanbicIbtc     6,872 /  7,018
-  sterlingBank    1,462 /  1,293
-  uba             8,607 / 13,913
-  unionBank       1,661 /  1,096
-  unityBank         156 /    130
-  wemaBank        3,765 /  2,913
-  zenithBank      3,782 /  2,660
+  access          5,385 /  7,876
+  ecoBank         4,429 /  2,162
+  fbn             6,265 /  4,571
+  fcmb            2,732 /  1,592
+  fidelityBank      564 /    641
+  gtb             2,486 /  2,133
+  jaizBank          161 /    239
+  keyStoneBank      760 /    706
+  multi             306 /  2,066
+  polarisBank     1,715 /    789
+  stanbicIbtc     7,384 /  7,475
+  sterlingBank    1,569 /  1,376
+  uba             9,251 / 14,919
+  unionBank       1,785 /  1,176
+  unityBank         168 /    139
+  wemaBank        4,050 /  3,130
 
-word count quantiles (train): p50=12, p90=43, p95=58, p99=89
+word count quantiles (train): p50=12, p90=42, p95=57, p99=89

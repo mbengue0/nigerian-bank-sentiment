@@ -3,4 +3,6 @@ no Latin-letter words,509
 under 50% common English words,2015
 near-duplicate group with conflicting labels,1345
 near-duplicate of a kept review,5546
-not selected in 100k sample,86902
+shared between zenithBank and another bank,1112
+held out as zenithBank unseen-bank test,12041
+not selected in 100k sample,73749

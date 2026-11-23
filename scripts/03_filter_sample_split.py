@@ -1,8 +1,9 @@
 """
-Stage 2b: English filter, near-duplicate removal, 100,000-review sample, 80/10/10 split.
+Stage 2b: English filter, near-duplicate removal, held-out bank, 100,000-review sample, 80/10/10 split.
 
 Input : data/interim/candidates_lang.csv.gz  (196,317 candidates + langid output)
 Output: data/final/train.csv, val.csv, test.csv   - the fixed partitions used by BOTH models
+        data/final/unseen_zenithBank.csv          - extension: reviews of a bank never used in training
         data/interim/filter_flags.csv.gz          - every candidate with its keep/drop reason
         outputs/prep_report.txt, outputs/removal_log_stage2.csv
 
@@ -30,6 +31,7 @@ from wordfreq import top_n_list
 SEED = 42
 TARGET = 100_000
 MIN_EN_SHARE = 0.5
+HOLDOUT = "zenithBank"   # extension: bank kept out of training, chosen before seeing any test result
 EN_WORDS = set(top_n_list("en", 50_000))
 
 Path("data/final").mkdir(parents=True, exist_ok=True)
@@ -60,6 +62,10 @@ say(f"after English filter: {len(english):,}  (dropped {int(no_words.sum()):,} n
 
 # ---------------------------------------------------------------- near-duplicates
 english["loose_key"] = words[english.index].str.join(" ")
+# A near-duplicate group can span banks ("Great app!!" under Zenith, "great app" under UBA).
+# Record every bank in the group BEFORE keeping one copy, so no bank membership is lost.
+english["banks"] = english.groupby("loose_key")["banks"].transform(
+    lambda s: "|".join(sorted(set("|".join(s).split("|")))))
 g = english.groupby("loose_key")["label"].transform("nunique")
 conflict = g > 1
 cand.loc[english.index[conflict], "drop_reason"] = "near-duplicate group with conflicting labels"
@@ -71,6 +77,26 @@ log += [("near-duplicate group with conflicting labels", int(conflict.sum())),
         ("near-duplicate of a kept review", int(dup.sum()))]
 say(f"after near-duplicate removal: {len(english):,}")
 say(f"  negative / positive: {(english.label == 0).sum():,} / {(english.label == 1).sum():,}")
+
+# ---------------------------------------------------------------- held-out bank (extension)
+# Zenith Bank is removed BEFORE sampling. Reviews posted only under Zenith become a separate
+# "unseen bank" test set. Texts that Zenith shares with another bank are dropped from both
+# sides: they would not be truly unseen.
+bank_lists = english["banks"].str.split("|")
+has_holdout = bank_lists.apply(lambda b: HOLDOUT in b)
+only_holdout = english["banks"] == HOLDOUT
+shared = has_holdout & ~only_holdout
+cand.loc[english.index[shared], "drop_reason"] = f"shared between {HOLDOUT} and another bank"
+cand.loc[english.index[only_holdout], "drop_reason"] = f"held out: {HOLDOUT} unseen-bank test"
+unseen = english[only_holdout].copy()
+english = english[~has_holdout]
+log += [(f"shared between {HOLDOUT} and another bank", int(shared.sum())),
+        (f"held out as {HOLDOUT} unseen-bank test", len(unseen))]
+say(f"\nheld-out bank {HOLDOUT}: {len(unseen):,} reviews "
+    f"({(unseen.label == 0).sum():,} neg / {(unseen.label == 1).sum():,} pos); "
+    f"{int(shared.sum()):,} shared texts dropped")
+say(f"pool for the main experiment (other 15 banks): {len(english):,}")
+
 cand[["text_hash", "label", "banks", "lang", "lang_prob", "n_words", "en_share", "drop_reason"]] \
     .to_csv("data/interim/filter_flags.csv.gz", index=False)
 
@@ -92,14 +118,18 @@ train, rest = train_test_split(sample, test_size=0.2, stratify=sample["strata"],
 val, test = train_test_split(rest, test_size=0.5, stratify=rest["strata"], random_state=SEED)
 
 cols = ["text_hash", "content", "label", "banks", "strat_bank", "years", "scores", "n_rows"]
-for name, part in [("train", train), ("val", val), ("test", test)]:
+unseen["strat_bank"] = HOLDOUT
+for name, part in [("train", train), ("val", val), ("test", test), (f"unseen_{HOLDOUT}", unseen)]:
     part[cols].sort_values("text_hash").to_csv(f"data/final/{name}.csv", index=False)
 
 # ---------------------------------------------------------------- checks + report
-for a, b in [("train", "val"), ("train", "test"), ("val", "test")]:
-    A, B = {"train": train, "val": val, "test": test}[a], {"train": train, "val": val, "test": test}[b]
-    assert not set(A["loose_key"]) & set(B["loose_key"]), f"overlap {a}/{b}"
-say("no exact or near-duplicate overlap between partitions: OK")
+parts = {"train": train, "val": val, "test": test, "unseen": unseen}
+for a, b in [("train", "val"), ("train", "test"), ("val", "test"),
+             ("train", "unseen"), ("val", "unseen"), ("test", "unseen")]:
+    assert not set(parts[a]["loose_key"]) & set(parts[b]["loose_key"]), f"overlap {a}/{b}"
+for name in ["train", "val", "test"]:
+    assert not parts[name]["banks"].str.contains(HOLDOUT).any(), f"{HOLDOUT} found in {name}"
+say(f"no exact or near-duplicate overlap between any two sets, and no {HOLDOUT} text in train/val/test: OK")
 
 say(f"\nseed={SEED}  target={TARGET:,}  min English share={MIN_EN_SHARE}")
 say(f"{'split':<7}{'rows':>8}{'neg':>8}{'pos':>8}{'pos %':>7}")
