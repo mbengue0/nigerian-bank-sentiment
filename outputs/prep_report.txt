@@ -1,0 +1,32 @@
+candidates in: 196,317
+after English filter: 193,793  (dropped 509 no-word, 2,015 low-share)
+after near-duplicate removal: 186,902
+  negative / positive: 92,380 / 94,522
+no exact or near-duplicate overlap between partitions: OK
+
+seed=42  target=100,000  min English share=0.5
+split      rows     neg     pos  pos %
+train    80,000  39,543  40,457   50.6
+val      10,000   4,942   5,058   50.6
+test     10,000   4,941   5,059   50.6
+
+rows per bank group in the 100k sample (neg / pos):
+  access          5,034 /  7,649
+  ecoBank         4,136 /  2,054
+  fbn             5,852 /  4,340
+  fcmb            2,551 /  1,514
+  fidelityBank      525 /    604
+  gtb             2,314 /  2,013
+  jaizBank          150 /    225
+  keyStoneBank      707 /    663
+  multi             255 /  1,747
+  polarisBank     1,597 /    742
+  stanbicIbtc     6,872 /  7,018
+  sterlingBank    1,462 /  1,293
+  uba             8,607 / 13,913
+  unionBank       1,661 /  1,096
+  unityBank         156 /    130
+  wemaBank        3,765 /  2,913
+  zenithBank      3,782 /  2,660
+
+word count quantiles (train): p50=12, p90=43, p95=58, p99=89
