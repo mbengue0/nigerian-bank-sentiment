@@ -26,6 +26,16 @@ WHAT dataset.csv CONTAINS
     Source: Federal University Lokoja, "Nigerian Banks: Bank Reviews Dataset Collection",
     Hugging Face, revision 27d2b6e7d541a0b713dc8eed56b0daf27476d2a7 (Apache-2.0).
 
+AI ASSISTANCE DISCLOSURE
+    This code was written with AI assistance, as allowed by the course with disclosure.
+    - Claude (Anthropic) wrote this code and ran the experiments under the author's direction:
+      data preparation, both models, the evaluation and the error analysis. It also made the
+      first-pass categories for the 150 hand-read test errors (column manual_error_category).
+    - ChatGPT assisted earlier with project scoping and the proposal (no code in this file).
+    - The author chose the project scope, the dataset, the models and the unseen-bank extension,
+      and reviewed the code and results. All results come from running this code on the real
+      dataset; no data, results or annotations were invented.
+
 SECTIONS
     1. Data preparation (only with --rebuild-data)    5. Final evaluation (test + unseen bank)
     2. Load the fixed data sets                       6. Error analysis
