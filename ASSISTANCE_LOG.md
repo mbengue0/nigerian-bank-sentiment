@@ -26,3 +26,8 @@ Earlier sessions (per the handoff and slide 9): ChatGPT assisted with project sc
 - Claude read 150 random test errors and assigned each a category (outputs/manual_error_labels.csv);
   this first pass has not yet been checked by the student.
 - Claude produced the progress report PDF (reports/).
+
+## 28 November 2026 — Claude, session 4
+- Claude drafted the final report (reports/report.pdf) and the final presentation
+  (slides/presentation-cs4714-Mouhamadou-Mbengue.pptx, with speaker notes) from the recorded results.
+- Claude wrote 08_figures.py (report figure) and make_submission.py (dataset.csv + submission zip).

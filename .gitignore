@@ -3,3 +3,4 @@ data/interim/
 models/
 *.zip
 __pycache__/
+submission/

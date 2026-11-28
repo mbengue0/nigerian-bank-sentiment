@@ -23,6 +23,8 @@ Run every command from this folder. Python 3.13 was used. No GPU is needed.
 | 5b | `python3 scripts/05_gru.py --seed 42` (then 1, 2) | GRU: full training with early stopping | ~4-6 min each |
 | 6 | `python3 scripts/06_evaluate.py` | ONE final evaluation of the frozen models on test + unseen Zenith set | ~30 s |
 | 7 | `python3 scripts/07_error_analysis.py` | Error rates by review type, McNemar test, sample of errors to read | ~10 s |
+| 8 | `python3 scripts/08_figures.py` | Confusion-matrix figure for the report | ~5 s |
+| – | `python3 scripts/make_submission.py` | Builds dataset.csv and the submission zip (packaging only) | ~10 s |
 
 `scripts/gru_model.py` holds the GRU tokenizer, batching and model; it is imported by steps 5 and 6.
 The fixed data sets are included in `data/final/`, so steps 4-7 can run without steps 0-3.
@@ -38,7 +40,8 @@ The fixed data sets are included in `data/final/`, so steps 4-7 can run without 
   per-review predictions, `figures/` (confusion matrices)
 - `outputs/preliminary_16banks/` - validation results from the first run, before Zenith was held out
   (these are the numbers in the progress report)
-- `reports/` - progress report PDF
+- `reports/` - progress report PDF, final report (report.pdf and its HTML source)
+- `slides/` - final presentation (.pptx) and the script that builds it (build_deck.js, pptxgenjs)
 - `ASSISTANCE_LOG.md` - record of AI assistance
 
 Not included (recreated by the scripts): `data/raw/`, `data/interim/`, `models/`.
