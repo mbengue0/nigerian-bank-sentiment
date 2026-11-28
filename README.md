@@ -4,6 +4,13 @@ CS-4714 capstone, Mouhamadou Mbengue. Compares TF-IDF + logistic regression with
 trainable embeddings + one GRU layer on Google Play reviews of 16 Nigerian banks' mobile apps.
 Extension: both models are also tested on a bank never seen in training (Zenith Bank).
 
+## Quick start (submission version)
+
+    pip install pandas numpy scikit-learn torch scipy matplotlib
+    python code.py
+
+`code.py` is the whole project in one file. It needs `dataset.csv` in the same folder (build it with `python3 scripts/make_submission.py`, or let `code.py --rebuild-data` download and rebuild it). The numbered scripts below are the development version of the same pipeline, one file per stage.
+
 ## Setup
 
     pip install -r requirements.txt

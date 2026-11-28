@@ -31,3 +31,6 @@ Earlier sessions (per the handoff and slide 9): ChatGPT assisted with project sc
 - Claude drafted the final report (reports/report.pdf) and the final presentation
   (slides/presentation-cs4714-Mouhamadou-Mbengue.pptx, with speaker notes) from the recorded results.
 - Claude wrote 08_figures.py (report figure) and make_submission.py (dataset.csv + submission zip).
+- Claude merged the pipeline into a single submission file, code.py (python code.py runs everything from
+  dataset.csv; --rebuild-data recreates dataset.csv from Hugging Face). Verified: rebuilt dataset.csv is
+  identical, and a full run reproduces every reported number.

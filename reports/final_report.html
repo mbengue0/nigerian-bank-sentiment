@@ -183,7 +183,7 @@ code { font-family: "Courier New", "Liberation Mono", monospace; font-size: 10pt
 <li><b>Claude (Anthropic)</b> assisted with implementation and writing. It wrote and ran the data preparation, training, evaluation and error-analysis scripts. It also assigned the first-pass categories for the language-filter samples and the 150 sampled errors, and drafted this report from the recorded outputs. All decisions on scope and the extension were made by the author.</li>
 <li>All numbers come from code run on the real dataset. No results, reviews or annotations were invented. A detailed log (<code>ASSISTANCE_LOG.md</code>) is included with the code.</li>
 </ul>
-<p><b>Code and reproducibility.</b> All code, the fixed data sets and every result file are at https://github.com/mbengue0/nigerian-bank-sentiment. The README lists the scripts in run order.</p>
+<p><b>Code and reproducibility.</b> The submitted <code>code.py</code> runs the whole experiment end to end with <code>python code.py</code>: it reads <code>dataset.csv</code> from its own folder, trains and evaluates both models, and writes all results to a <code>results</code> folder (about 15–20 minutes on a 2-core CPU). <code>python code.py --rebuild-data</code> first recreates <code>dataset.csv</code> from the raw Hugging Face files; this was checked to give an identical file. The development version, split into one script per stage, and every intermediate result are at https://github.com/mbengue0/nigerian-bank-sentiment.</p>
 
 <h2>References</h2>
 <ul class="refs">
